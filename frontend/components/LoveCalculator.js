@@ -51,7 +51,7 @@ const LoveCalculator = () => {
             Seu nome:
             <input
               type="text"
-              value={name2}
+              value={name1}
               onChange={(e) => setName1(e.target.value)}
               className="mt-1 p-2 border border-gray-300 rounded"
               required
@@ -61,7 +61,7 @@ const LoveCalculator = () => {
             Nome dela:
             <input
               type="text"
-              value={name1}
+              value={name2}
               onChange={(e) => setName2(e.target.value)}
               className="mt-1 p-2 border border-gray-300 rounded"
               required

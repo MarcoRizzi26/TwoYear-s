@@ -1,20 +1,29 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const BackgroundMusic = ({ src }) => {
-  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.loop = true; // Define a música para tocar em loop
-      audio.play().catch(error => {
-        console.error('Erro ao tentar reproduzir música:', error);
-      });
-    }
-  }, [src]);
+    const handleInteraction = () => {
+      if (!isPlaying) {
+        const audio = document.getElementById('background-audio');
+        audio.play();
+        setIsPlaying(true);
+      }
+    };
+
+    // Adiciona eventos de interação
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('touchstart', handleInteraction);
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+    };
+  }, [isPlaying]);
 
   return (
-    <audio ref={audioRef} src={src} />
+    <audio id="background-audio" src={src} preload="auto" />
   );
 };
 
