@@ -21,7 +21,7 @@ const LoveCalculator = () => {
 
     // Corrigindo a lógica de correspondência dos nomes
     if (
-      (name1.toLowerCase() === 'marco' || name1.toLowerCase() === 'marco antonio') &&
+      (name1.toLowerCase() === 'marco') &&
       name2.toLowerCase() === 'geovanna'
     ) {
       setMatchPercentage(100); // Exibe 100% de match
