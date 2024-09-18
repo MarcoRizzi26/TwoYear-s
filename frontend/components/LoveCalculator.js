@@ -48,7 +48,7 @@ const LoveCalculator = () => {
 
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4 mt-4">
           <label className="flex flex-col">
-            Seu nome:
+            Nome dele:
             <input
               type="text"
               value={name1}
@@ -58,7 +58,7 @@ const LoveCalculator = () => {
             />
           </label>
           <label className="flex flex-col">
-            Nome dela:
+            Seu nome:
             <input
               type="text"
               value={name2}
